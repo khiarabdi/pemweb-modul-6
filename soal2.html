@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soal 2 - jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding-top: 40px; background: #f2f4f8; }
+    #kotak { width: 200px; height: 200px; margin: 24px auto; background: #cccccc; border-radius: 8px; }
+    button { padding: 8px 18px; margin: 4px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
+    #ungu { background: purple; color: #fff; }
+    #biru { background: blue; color: #fff; }
+    #hijau { background: green; color: #fff; }
+    #sembunyikan, #tampilkan { background: #444; color: #fff; }
+  </style>
+</head>
+<body>
+  <h2>Interaksi dengan jQuery</h2>
+
+  <div>
+    <button id="ungu">Ungu</button>
+    <button id="biru">Biru</button>
+    <button id="hijau">Hijau</button>
+  </div>
+
+  <div id="kotak"></div>
+
+  <div>
+    <button id="sembunyikan">Sembunyikan warna</button>
+    <button id="tampilkan">Tampilkan warna</button>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("#ungu").click(function () {
+        $("#kotak").css("background-color", "purple");
+      });
+
+      $("#biru").click(function () {
+        $("#kotak").css("background-color", "blue");
+      });
+
+      $("#hijau").click(function () {
+        $("#kotak").css("background-color", "green");
+      });
+
+      $("#sembunyikan").click(function () {
+        $("#kotak").hide();
+      });
+
+      $("#tampilkan").click(function () {
+        $("#kotak").show();
+      });
+    });
+  </script>
+</body>
+</html>

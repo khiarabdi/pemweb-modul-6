@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soal 1 - JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f4f8; display: flex; justify-content: center; padding-top: 60px; }
+    .card { background: #fff; padding: 28px 32px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,.12); width: 340px; }
+    h2 { margin-top: 0; text-align: center; }
+    label { display: block; margin: 14px 0 4px; font-weight: bold; }
+    input { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #bbb; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Data Mahasiswa</h2>
+    <form>
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" readonly>
+
+      <label for="nim">NIM</label>
+      <input type="text" id="nim" readonly>
+    </form>
+  </div>
+
+  <script>
+    function mintaData() {
+      var nama = prompt("Masukkan nama Anda:");
+      var nim = prompt("Masukkan NIM Anda:");
+      return { nama: nama, nim: nim };
+    }
+
+    function tampilkanData(data) {
+      document.getElementById("nama").value = data.nama ? data.nama : "-";
+      document.getElementById("nim").value = data.nim ? data.nim : "-";
+    }
+
+    window.onload = function () {
+      var data = mintaData();
+      tampilkanData(data);
+    };
+  </script>
+</body>
+</html>
